@@ -1,5 +1,4 @@
 //
-// $Id: d64dump.cc,v 1.1 1997/02/20 23:21:23 jochen Rel $
 // simple disk image viewer
 //
 // Copyright (C) 1995-1997  Jochen Metzinger
@@ -18,15 +17,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //
-// $Log: d64dump.cc,v $
-// Revision 1.1  1997/02/20 23:21:23  jochen
-// from ctools 3.0
-//
-
-#ifndef lint
-static const char rcsid[] = "$Id: d64dump.cc,v 1.1 1997/02/20 23:21:23 jochen Rel $";
-#endif /* not lint */
-
 
 #include <getopt.h>
 #include <stdlib.h>

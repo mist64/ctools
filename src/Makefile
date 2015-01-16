@@ -1,10 +1,5 @@
 #
-# $Id: makefile.unx,v 1.1 1997/02/20 23:21:23 jochen Rel $
 # Makefile for Linux
-#
-# $Log: makefile.unx,v $
-# Revision 1.1  1997/02/20 23:21:23  jochen
-# from ctools 3.0
 #
 
 VERSION=0.4

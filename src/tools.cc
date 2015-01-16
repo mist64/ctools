@@ -1,5 +1,4 @@
 //
-// $Id: tools.cc,v 1.1 1997/02/20 23:21:23 jochen Rel $
 // Copyright (C) 1995-1997  Jochen Metzinger
 //
 // user tools
@@ -18,15 +17,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //
-// $Log: tools.cc,v $
-// Revision 1.1  1997/02/20 23:21:23  jochen
-// from ctools 3.0
-//
-
-#ifndef lint
-static const char rcsid[] = "$Id: tools.cc,v 1.1 1997/02/20 23:21:23 jochen Rel $";
-#endif
-
 
 #include <ctype.h>
 #include <string.h>

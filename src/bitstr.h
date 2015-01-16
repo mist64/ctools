@@ -1,5 +1,4 @@
 //
-// $Id: bitstr.h,v 1.1 1997/02/20 23:21:23 jochen Rel $
 // Copyright (C) 1995-1997  Jochen Metzinger
 //
 // dynamic array of bits
