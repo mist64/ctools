@@ -85,11 +85,7 @@ main(int argc, char *argv[])
 	int nr, count;
 	char line[256];
 
-#ifdef MSDOS
-	source = "biosdump";
-#else
 	source = argv[0];
-#endif
 	short_usage = "biosdump [--help] image";
 	err_init();
 	while (1) {

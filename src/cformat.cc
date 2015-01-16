@@ -124,11 +124,7 @@ init(int argc, char *argv[])
 {
 	int c, index;
 
-#ifdef MSDOS
-	source = "cformat";
-#else
 	source = argv[0];
-#endif
  	short_usage = "cformat [--help] [-0|-1|-2] image";
 	while (1) {
 		static struct option long_options[] = {

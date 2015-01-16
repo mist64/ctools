@@ -28,13 +28,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 
-How to start?
+Documentation
 -------------
 
-Read INSTALL for more information on compiling. In the directory bin
-I have put MSDOS-binary files *.exe and Linux-ELF-binaries that are
-compiled for libc.so.5.4.7. In the directory doc there are the man
-pages for all commands. For MSDOS I have included plain cat pages. All
+In the directory doc there are the man pages for all commands. All
 commands understand the option  "--help"  which output a help text.
 
 
@@ -43,17 +40,6 @@ Files
 
 COPYING		GNU General Public License
 README		this file
-INSTALL		hints for compiling ctools
-
-bin/		binaries
-  d64dump	view c64 disk images -- Linux/ELF
-  biosdump	view c64/c128 CP/M disk images -- Linux/ELF
-  cformat	create empty c64/c128 CP/M disk images -- Linux/ELF
-  ctools	manipulate c64/c128 CP/M disk images -- Linux/ELF
-  d64dump.exe	view c64 disk images -- MSDOS
-  biosdump.exe	view c64/c128 CP/M disk images -- MSDOS
-  cformat.exe	create empty c64/c128 CP/M disk images -- MSDOS
-  ctools.exe	manipulate c64/c128 CP/M disk images -- MSDOS
 
 doc/		documents
   d64dump.1	man page of d64dump(1)
@@ -61,16 +47,9 @@ doc/		documents
   cformat.1	man page of cformat(1)
   ctools.1	man page of ctools(1)
   d64.5		man page of d64(5)
-  d64dump.cat	cat page of d64dump(1) -- MSDOS
-  biosdump.cat	cat page of biosdump(1) -- MSDOS
-  cformat.cat	cat page of cformat(1) -- MSDOS
-  ctools.cat	cat page of ctools(1) -- MSDOS
-  d64.cat	cat page of d64(5) -- MSDOS
 
 src/		sources
-  build.bat	build and install batch file -- MSDOS
-  makefile.dos	Makefile for Symantec C compiler -- MSDOS
-  makefile.unx	Makefile for G++ -- Linux
+  Makefile	Makefile for G++
   d64dump.cc	simple disk image viewer
   biosdump.cc	simple CP/M disk image viewer
   cformat.cc	create empty disk images
@@ -97,12 +76,6 @@ src/		sources
   tools.h	user tools
   tools.cc	-"-
 
-src/getopt	sources of getopt() -- MSDOS
-  getopt.h	GNU's getopt() from glibc -- MSDOS
-  getopt.c	-"-
-  getopt1.c	-"-
-  getopt.cat	cat page of getopt(3) -- MSDOS
-
 
 Version History
 ---------------
@@ -127,6 +100,9 @@ Version 0.3 -- August 1996
 
 Version 0.4 -- March 1997
 * rewritten in C++ under Linux and MS-DOS
+
+Version 0.4a -- January 2015 (Michael Steil)
+* removed MS-DOS support, fix compilation on modern UNIX systems
 
 To-Do
 -----

@@ -44,10 +44,6 @@ extern void get_files(const char filename[]);
         // copy CP/M files to current directory
 extern void put_file(const char filename[]);
         // copy a file to CP/M directory
-#ifdef MSDOS
-extern void put_files(char filename[]);
-        // copy MsDos files to CP/M directory
-#endif
 extern void flush_dir();
 	// save the directory buffer to disk
 

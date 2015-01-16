@@ -53,11 +53,7 @@ usage()
 	puts("  g file                 get file from image");
 	puts("  h,?                    show this display this help and exit");
 	puts("  m file                 output dump of file");
-#ifdef MSDOS
-	puts("  p file                 put file onto image");
-#else
 	puts("  p files                put files onto image");
-#endif
 	puts("  r old new              rename old to new");
 	puts("  t file                 output file");
 	puts("  u                      unerase files\n");
@@ -71,11 +67,7 @@ main (int argc, char *argv[])
 	char command, *image;
 	bool initdir = FALSE;
 
-#ifdef MSDOS
-        source = "ctools";
-#else
-        source = argv[0];
-#endif
+	source = argv[0];
 	short_usage = "ctools [--help] [-i] [-u user-array]" \
 	              " image command [options]";
 	err_init();
@@ -152,16 +144,10 @@ main (int argc, char *argv[])
 			dump_files(argv[optind]);
 			break;
 		case 'P':
-#ifdef MSDOS
-			if (optind+1 != argc)
-				errx("expected one parameter");
-			put_files(argv[optind]);
-#else
 			if (optind == argc)
 				errx("expected parameters"); 
 			while (optind < argc) 
 				put_file(argv[optind++]);
-#endif
 			break;
 		case 'R':
 			if (optind+2 != argc)

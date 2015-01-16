@@ -55,11 +55,7 @@ main(int argc, char *argv[])
 	char line[256];
 	class d64 d64;
 
-#ifdef MSDOS
-	source = "d64dump";
-#else
 	source = argv[0];
-#endif
 	short_usage = "d64dump [--help] image";
 	err_init();
 	while (TRUE) {

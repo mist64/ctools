@@ -32,9 +32,6 @@ static const char rcsid[] = "$Id: tools.cc,v 1.1 1997/02/20 23:21:23 jochen Rel 
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#ifdef MSDOS
-#include <dos.h>
-#endif
 #include "err.h"
 #include "misc.h"
 #include "dump.h"
@@ -187,30 +184,7 @@ dump_files(const char filename[])
 		warnx("no file found");
 }
 
-#ifdef MSDOS
-static char *
-target_filename(const dir_name &dn)
-{
-	static const char MSDOS_FILE_CHARS[] =
-		"!#$%&'()-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ^_`{}~";
-	char *s, *t, *dot;
-
-	s = dn.filename();
-	// X-out strange characters
-	dot = strrchr(s, '.');
-	if (dot == NULL) dot = strchr(s, '\0');
-	for (t=s; *t!='\0'; t++) {
-		*t = toupper(*t);
-		if (t == dot)
-			continue;
-		if (strchr(MSDOS_FILE_CHARS, *t) == NULL)
-			*t = 'X';
-	}
-	return s;
-}
-#else /* not MSDOS */
 #define target_filename(dn) ((dn).filename())
-#endif
 
 static char *
 target_check_file(const char *fname)
@@ -295,14 +269,7 @@ cpm_filename(const char filename[])
 	char *s, *t, *dot;
 
 	// take basename
-#ifdef MSDOS
-	t = strchr(filename, ':');
-	if (t != NULL)
-		filename = t + 1;
-	t = strrchr(filename, '\\');
-#else /* not MSDOS */
 	t = strrchr(filename, '/');
-#endif
 	if (t != NULL)
 		filename = t + 1;
 	s = strdup(filename);
@@ -397,38 +364,6 @@ put_file(const char filename[])
 		err();
 	f.close();
 }
-
-#ifdef MSDOS
-
-void
-put_files(char filename[])
-{
-	struct find_t ffblk;
-	char *name, *base, *t;
-
-	// can file name expanded?
-	if (_dos_findfirst(filename, 0xff, &ffblk) != 0) {
-		put_file(filename);
-		return;
-	}
-	// file prefix from name to base
-	base = name = malloc(strlen(filename)+13);
-	strcpy(name, filename);
-	t = strchr(base, ':');
-	if (t != NULL)
-		base = t + 1;
-	t = strrchr(base, '\\');
-	if (t != NULL)
-		base = t + 1;
-	// work on all found names
-	do {
-		strcpy(base, ffblk.name);
-		put_file(name);
-	} while (_dos_findnext(&ffblk) == 0);
-	free(name);
-}
-
-#endif /* MSDOS */
 
 void
 flush_dir()
