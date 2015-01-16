@@ -32,18 +32,8 @@ static const char rcsid[] = "$Id: err.cc,v 1.1 1997/02/20 23:21:23 jochen Rel $"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <new.h>
+#include <new>
 #include "err.h"
-
-// test of environment
-#ifdef unix
-#ifndef linux
-#error unknown unix (known linux)
-#endif
-// unix ...
-#elif !defined(MSDOS)
-#error unknown operation system (known "unix" and "MSDOS")
-#endif
 
 static void THROW(int status);
 
@@ -59,7 +49,7 @@ static void err_new_handler()
 void
 err_init()
 {
-	(void)set_new_handler(&err_new_handler);
+    (void)std::set_new_handler(&err_new_handler);
 }
 
 static void

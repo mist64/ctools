@@ -1,0 +1,6 @@
+*.o
+biosdump
+cformat
+ctools
+d64dump
+
