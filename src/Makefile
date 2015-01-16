@@ -1,5 +1,5 @@
 #
-# Makefile for Linux
+# Makefile
 #
 
 VERSION=0.4
@@ -21,7 +21,7 @@ install: $(CMDS)
 	install -s $(CMDS) ../bin
 
 clean:
-	-rm *.o core $(CMDS)
+	-rm -f *.o core $(CMDS)
 
 d64dump:  dump.o misc.o err.o d64.o d64dump.o 
 biosdump: dump.o misc.o err.o d64.o bios.o biosdump.o
