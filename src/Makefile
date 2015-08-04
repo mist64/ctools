@@ -4,11 +4,11 @@
 
 VERSION=0.4
 
+CC=g++
 CXX=g++
 #CXXFLAGS=-g -pedantic -Wall
 CXXFLAGS=-O -Wall
 CPPFLAGS=-DVERSION=\"V$(VERSION)\"
-LDFLAGS=-lstdc++
 
 CMDS = d64dump biosdump cformat ctools
 

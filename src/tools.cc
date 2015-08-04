@@ -259,7 +259,7 @@ cpm_filename(const char filename[])
 	char *s, *t, *dot;
 
 	// take basename
-	t = strrchr(filename, '/');
+	t = strrchr((char *) filename, '/');
 	if (t != NULL)
 		filename = t + 1;
 	s = strdup(filename);
